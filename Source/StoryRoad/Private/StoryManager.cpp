@@ -599,6 +599,7 @@ void UStoryManager::StoryNextChapter()
 			if (CompleteCondition == SingleStoryInfor.Judjes.Num())
 			{
 				CurrentStory = SingleStoryInfor.TargetStory;
+				OnStoryChange.Broadcast();
 				return;
 			}
 			break;
@@ -606,6 +607,7 @@ void UStoryManager::StoryNextChapter()
 			if (CompleteCondition >= 1)
 			{
 				CurrentStory = SingleStoryInfor.TargetStory;
+				OnStoryChange.Broadcast();
 				return;
 			}
 			break;
@@ -613,6 +615,7 @@ void UStoryManager::StoryNextChapter()
 			if (CompleteCondition == SingleStoryInfor.CompleteCount)
 			{
 				CurrentStory = SingleStoryInfor.TargetStory;
+				OnStoryChange.Broadcast();
 				return;
 			}
 			break;
