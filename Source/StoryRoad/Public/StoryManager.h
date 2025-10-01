@@ -68,7 +68,7 @@ struct FStoryJudjeInfor
 
 
 USTRUCT(BlueprintType)
-struct FStoryGoon
+struct FStoryGoon : public FTableRowBase
 {
 	GENERATED_BODY() //准备去的故事块
 
@@ -190,3 +190,4 @@ public: //函数
 	UFUNCTION(BlueprintCallable, Category="Story|Function", DisplayName="故事进行下一章")
 	void StoryNextChapter();
 };
+
