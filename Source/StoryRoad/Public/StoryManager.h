@@ -101,6 +101,15 @@ struct FStoryInfor
 	TArray<FStoryGoon> StoryOnSetMaps;
 };
 
+USTRUCT(BlueprintType)
+struct FStoryDatable : public FTableRowBase
+{
+	GENERATED_BODY() //用于表格制作不同的故事
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Story Setting", DisplayName="所有的故事")
+	TMap<UDataTable*, FStoryInfor> StoryOnSetTables;
+};
+
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class STORYROAD_API UStoryManager : public UActorComponent
 {
@@ -190,5 +199,6 @@ public: //函数
 	UFUNCTION(BlueprintCallable, Category="Story|Function", DisplayName="故事进行下一章")
 	void StoryNextChapter();
 };
+
 
 
